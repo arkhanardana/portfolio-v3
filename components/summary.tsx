@@ -3,7 +3,10 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import React from 'react'
+import Marquee from './marquee'
 gsap.registerPlugin(ScrollTrigger)
+
+const marqueeItems = ["Innovation", "Precision", "Trust", "Collaboration", "Excellence"]
 
 const Summary = () => {
 
@@ -39,26 +42,36 @@ const Summary = () => {
   })
 
   return (
-    <section className='mt-20 mb-42 overflow-hidden font-light leading-snug text-center contact-text-responsive'>
-      <div id="title-service-1">
-        <p>Architecture</p>
-      </div>
-      <div id="title-service-2" className="flex items-center justify-center gap-3 translate-x-16">
-        <p className="font-normal">Development</p>
-        <div className="w-32 h-1 bg-gold" />
-        <p>Backend</p>
-      </div>
-      <div id="title-service-3" className="flex items-center justify-center gap-3 -translate-x-48">
-        <p>API</p>
-        <div className="w-32 h-1 bg-gold" />
-        <p className="italic">Frontend</p>
-        <div className="w-32 h-1 bg-gold" />
-        <p>Scalability</p>
-      </div>
-      <div id="title-service-4" className="translate-x-48">
-        <p>Databases</p>
-      </div>
-    </section>
+    <>
+
+      <section className='mt-20 mb-42 overflow-hidden font-light leading-snug text-center contact-text-responsive'>
+        <div id="title-service-1">
+          <p>Architecture</p>
+        </div>
+        <div id="title-service-2" className="flex items-center justify-center gap-3 translate-x-16">
+          <p className="font-normal">Development</p>
+          <div className="w-32 h-1 bg-gold" />
+          <p className='italic'>Backend</p>
+        </div>
+        <div id="title-service-3" className="flex items-center justify-center gap-3 -translate-x-48">
+          <p>API</p>
+          <div className="w-32 h-1 bg-gold" />
+          <p className="italic">Frontend</p>
+          <div className="w-32 h-1 bg-gold" />
+          <p>Scalability</p>
+        </div>
+        <div id="title-service-4" className="translate-x-48">
+          <p>Databases</p>
+        </div>
+      </section>
+
+      <Marquee items={marqueeItems}
+        className='bg-black text-white'
+        reverse={true}
+        iconClassName='text-gold'
+      />
+    </>
+
   )
 }
 

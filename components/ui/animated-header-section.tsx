@@ -43,7 +43,7 @@ const AnimatedHeaderSection = ({ subTitle, title, text, textColor, withScrollTri
         <div ref={headerRef} className='flex flex-col justify-center pt-4 gap-y-10'>
           <p className={twMerge('text-2xl font-normal tracking-tighter lg:ml-20 ml-12', textColor)}>{subTitle}</p>
           <div className='px-10'>
-            <h1 className={twMerge('flex flex-col gap-y-8 banner-text-responsive sm:gap-16 md:block tracking-tighter lg:px-4', textColor)}>
+            <h1 className={twMerge('flex gap-x-2 gap-y-8 banner-text-responsive sm:gap-16 md:block tracking-tighter', textColor)}>
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>
               ))}
