@@ -80,7 +80,7 @@ export const projects = [
   },
   {
     id: 6,
-    name: "Es Teler Sultan",
+    name: "Es Teler Sultan Nafadh",
     description: "A profile website for a local UMKM to showcase identity, services, and key business info.",
     href: "https://estelersultannafadh.vercel.app/",
     image: "/pro4.png",

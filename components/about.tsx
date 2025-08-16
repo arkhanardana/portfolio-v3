@@ -13,13 +13,9 @@ const text = `Passionate about clean architecture
 
 const aboutText = `Currently attending SMK Negeri 2 Yogyakarta as a 13th - grade student majoring in Sistem Informasi
                 Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as
-                well as developing software applications.
-                
-                Proficient in frontend technologies such as HTML, CSS, React, Next.js, and Tailwind CSS for creating
+                well as developing software applications. Proficient in frontend technologies such as HTML, CSS, React, Next.js, and Tailwind CSS for creating
                 responsive user interfaces, and backend technologies like Node.js, Hono.js, Next.js server actions for building servers and
-                APIs, with MySQL and PostgreSQL for database management.
-
-                I am passionate about creating user-friendly and efficient web applications, and I always excited to
+                APIs, with MySQL and PostgreSQL for database management. I am passionate about creating user-friendly and efficient web applications, and I always excited to
                 learn and grow in my field.`;
 
 const About = () => {
@@ -46,10 +42,10 @@ const About = () => {
     })
   })
   return (
-    <section id='about' className='min-h-screen bg-[#e5e5e0] mt-40'>
+    <section id='about' className='min-h-screen bg-[#e5e5e0] lg:mt-40 mt-10'>
       <AnimatedHeaderSection
         subTitle={"Code. Build. Impact."}
-        title={"About Me"}
+        title={"<About Me />"}
         text={text}
         textColor={"text-black"}
         withScrollTrigger={true}

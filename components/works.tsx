@@ -6,9 +6,11 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import AnimatedHeaderSection from './ui/animated-header-section';
+import Marquee from './marquee';
 
 const text = `A showcase of projects built 
               with dedication to drive meaningful results.`;
+const marqueeItems = ["HIRE ME", "LET'S COLLABORATE", "GET IN TOUCH", "HIRE ME", "LET'S COLLABORATE", "GET IN TOUCH"];
 
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
@@ -93,50 +95,53 @@ const Works = () => {
   }
 
   return (
-    <section id="work" className="flex flex-col min-h-screen">
-      <AnimatedHeaderSection
-        subTitle={"Code meet passion."}
-        title={"My Works"}
-        text={text}
-        textColor={"text-black"}
-        withScrollTrigger={true}
-      />
-      <div className='relative flex flex-col font-light' onMouseMove={handleMouseMove}>
-        {projects.map((project, index: number) => (
-          <div
-            id='project'
-            key={project.id}
-            className='relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0'
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave()}>
-            {/* overlay */}
+    <>
+      <section id="work" className="flex flex-col min-h-screen lg:mt-40 mt-10">
+        <AnimatedHeaderSection
+          subTitle={"Code meet passion."}
+          title={"<Works />"}
+          text={text}
+          textColor={"text-black"}
+          withScrollTrigger={true}
+        />
+        <div className='relative flex flex-col font-light' onMouseMove={handleMouseMove}>
+          {projects.map((project, index: number) => (
             <div
-              ref={(el) => { overlayRefs.current[index] = el }}
-              className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
-            />
-            <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
-              <h2 className='lg:text-[32px] text-[26px] leading-none'>{project.name}</h2>
-              <ArrowUpRight className='md:size-6 size-5' />
+              id='project'
+              key={project.id}
+              className='relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0'
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave()}>
+              {/* overlay */}
+              <div
+                ref={(el) => { overlayRefs.current[index] = el }}
+                className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
+              />
+              <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
+                <h2 className='lg:text-[32px] text-[26px] leading-none'>{project.name}</h2>
+                <ArrowUpRight className='md:size-6 size-5' />
+              </div>
+              <div className="w-full h-0.5 bg-black/80" />
+              <div className='flex px-10 text-xs leading-loose uppercase translate-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12 flex-wrap md:flex-nowrap'>
+                {project.frameworks.map((framework) => (
+                  <p key={framework.id} className='text-black transition-colors duration-500 md:group-hover:text-white'>{framework.name}</p>
+                ))}
+              </div>
+              {/* mobile preview image */}
+              <div className='relative flex items-center justify-center px-10 md:hidden h-[400px]'>
+                <Image src={project.bgImage} alt='bg-image' fill sizes='100vw' priority={false} className='object-cover rounded-md blur-sm' />
+                <Image src={project.image} alt='image' width={1024} height={1024} className='absolute bg-center px-14 rounded-xl' />
+              </div>
             </div>
-            <div className="w-full h-0.5 bg-black/80" />
-            <div className='flex px-10 text-xs leading-loose uppercase translate-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12'>
-              {project.frameworks.map((framework) => (
-                <p key={framework.id} className='text-black transition-colors duration-500 md:group-hover:text-white'>{framework.name}</p>
-              ))}
-            </div>
-            {/* mobile preview image */}
-            <div className='relative flex items-center justify-center px-10 md:hidden h-[400px]'>
-              <Image src={project.bgImage} alt='bg-image' fill sizes='100vw' priority={false} className='object-cover rounded-md brightness-50' />
-              <Image src={project.image} alt='image' width={1024} height={1024} className='absolute bg-center px-14 rounded-xl' />
-            </div>
+          ))}
+          {/* desktop Flaoting preview image */}
+          <div ref={previewRef} className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[500px] md:block hidden opacity-0'>
+            {currentIndex !== null && <Image src={projects[currentIndex].image} alt='preview' width={500} height={500} className='object-cover' />}
           </div>
-        ))}
-        {/* desktop Flaoting preview image */}
-        <div ref={previewRef} className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[500px] md:block hidden opacity-0'>
-          {currentIndex !== null && <Image src={projects[currentIndex].image} alt='preview' width={500} height={500} className='object-cover' />}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
+
   )
 }
 

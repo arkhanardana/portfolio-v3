@@ -30,9 +30,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='flex flex-col justify-end min-h-screen'>
-      <div className="flex flex-col items-start px-10 md:px-20">
-        <div ref={imageRef} className="h-full w-full">
+    <section className='flex flex-col justify-end min-h-screen pt-10'>
+      <div className="flex flex-col items-center px-10 md:px-10">
+        <div ref={imageRef} className="h-full w-full flex justify-center">
           <Image
             src="/me.webp"
             alt="Arkhan Ardana"
