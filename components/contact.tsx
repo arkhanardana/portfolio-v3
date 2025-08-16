@@ -6,7 +6,6 @@ import AnimatedHeaderSection from './ui/animated-header-section';
 import Marquee from './marquee';
 import Link from 'next/link';
 import { socials } from '@/data';
-import Footer from './footer';
 
 const text = `Got a question, how or project Idea?
               WE’D love to hear from you and discuss further!`;

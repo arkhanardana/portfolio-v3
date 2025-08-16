@@ -6,11 +6,9 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import AnimatedHeaderSection from './ui/animated-header-section';
-import Marquee from './marquee';
 
 const text = `A showcase of projects built 
               with dedication to drive meaningful results.`;
-const marqueeItems = ["HIRE ME", "LET'S COLLABORATE", "GET IN TOUCH", "HIRE ME", "LET'S COLLABORATE", "GET IN TOUCH"];
 
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
