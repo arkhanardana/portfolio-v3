@@ -4,7 +4,17 @@ export const socials = [
   { name: "Linkedin", href: "" },
 ];
 
-export const projects = [
+interface Projects {
+  id: number;
+  name: string;
+  description: string;
+  href: string;
+  image: string;
+  bgImage: string;
+  frameworks: { id: number; name: string }[];
+}
+
+export const projects: Projects[] = [
   {
     id: 1,
     name: "Noto",
@@ -24,7 +34,7 @@ export const projects = [
     id: 2,
     name: "Technomart",
     description: "A simple E-commerce website with admin dashboard and payment gateway.",
-    href: "",
+    href: "https://github.com/arkhanardana/technomart",
     image: "/technomart.png",
     bgImage: "/technomart.png",
     frameworks: [
@@ -68,7 +78,7 @@ export const projects = [
     id: 5,
     name: "Satu Langkah",
     description: "A SaaS platform that connects users with investors for discovering promising projects.",
-    href: "",
+    href: "https://github.com/arkhanardana/satu-langkah",
     image: "/pro3.png",
     bgImage: "/pro3.png",
     frameworks: [
@@ -102,6 +112,19 @@ export const projects = [
       { id: 1, name: "HTML" },
       { id: 2, name: "CSS" },
       { id: 3, name: "JavaScript" },
+    ],
+  },
+  {
+    id: 8,
+    name: "Yufa Grape",
+    description: "A profile website for Yufa Grape to showcase products and services.",
+    href: "https://yufagrape.my.id/",
+    image: "/yufa.png",
+    bgImage: "/yufa.png",
+    frameworks: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "TypeScript" },
     ],
   },
 ];

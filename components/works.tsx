@@ -6,6 +6,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import AnimatedHeaderSection from './ui/animated-header-section';
+import Link from 'next/link';
 
 const text = `A showcase of projects built 
               with dedication to drive meaningful results.`;
@@ -117,7 +118,10 @@ const Works = () => {
               />
               <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
                 <h2 className='lg:text-[32px] text-[26px] leading-none'>{project.name}</h2>
-                <ArrowUpRight className='md:size-6 size-5' />
+
+                <Link href={project.href} target='_blank' className='flex items-center gap-2 text-xs leading-loose tracking-wider uppercase md:text-sm hover:text-white/80 transition-colors duration-200'>
+                  <ArrowUpRight className='md:size-6 size-5' />
+                </Link>
               </div>
               <div className="w-full h-0.5 bg-black/80" />
               <div className='flex px-10 text-xs leading-loose uppercase translate-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12 flex-wrap md:flex-nowrap'>
