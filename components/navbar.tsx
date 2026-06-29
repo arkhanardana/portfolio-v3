@@ -87,7 +87,7 @@ const Navbar = () => {
                 to={section}
                 smooth
                 offset={0}
-                duration={2000}>
+                duration={500}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </ScrollLink>
             </div>
