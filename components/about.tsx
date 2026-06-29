@@ -37,7 +37,7 @@ const About = () => {
     });
   });
   return (
-    <section id="about" className="min-h-screen bg-[#e5e5e0] lg:mt-40 mt-10">
+    <section id="about" className="min-h-screen bg-[#e5e5e0] lg:mt-40 mt-10 scroll-mt-10">
       <AnimatedHeaderSection
         subTitle={"Code. Build. Impact."}
         title={"<About Me />"}
