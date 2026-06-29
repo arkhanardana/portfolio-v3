@@ -40,8 +40,7 @@ const Nav = () => {
             smooth={true}
             duration={2000}
             offset={0}
-            className="transition-all duration-300 cursor-pointer hover:text-black/60 capitalize"
-          >
+            className="transition-all duration-300 cursor-pointer hover:text-black/60 capitalize">
             <p className="text-xl tracking-wider">
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </p>
@@ -55,14 +54,13 @@ const Nav = () => {
 export default function Footer() {
   return (
     <div
-      className="relative h-[600px] hidden lg:block"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
+      className="relative max-h-[600px] hidden lg:block"
+      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
       <div className="relative h-[calc(100dvh+600px)] -top-[100dvh]">
         <div className="h-[600px] sticky top-[calc(100dvh-600px)]">
           <Content />
         </div>
-        <div className="absolute left-96 bottom-20 w-full h-fit hidden lg:block z-50 2xl:-bottom-30">
+        <div className="absolute left-96 bottom-10 w-full h-fit hidden lg:block z-50 xl:-bottom-10">
           <Lanyard position={[0, 0, 16]} gravity={[0, -30, 0]} />
         </div>
       </div>

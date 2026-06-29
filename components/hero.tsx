@@ -1,9 +1,9 @@
-'use client'
-import React, { useRef } from 'react'
-import Image from 'next/image'
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import AnimatedHeaderSection from './ui/animated-header-section';
+"use client";
+import React, { useRef } from "react";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import AnimatedHeaderSection from "./ui/animated-header-section";
 
 const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -14,7 +14,7 @@ const Hero = () => {
         opacity: 0,
         scale: 0.8,
         y: 50,
-        rotate: -10
+        rotate: -10,
       });
 
       gsap.to(imageRef.current, {
@@ -24,14 +24,14 @@ const Hero = () => {
         rotation: 0,
         duration: 1.2,
         ease: "back.out(1.7)",
-        delay: 0.5
+        delay: 0.5,
       });
     }
   }, []);
 
   return (
-    <section className='flex flex-col justify-end min-h-screen pt-10'>
-      <div className="flex flex-col items-center px-10 md:px-10">
+    <section className="flex flex-col justify-end min-h-screen pt-10">
+      <div className="flex flex-col items-center px-10 md:px-10 container mx-auto">
         <div ref={imageRef} className="h-full w-full flex justify-center">
           <Image
             src="/me.webp"
@@ -51,7 +51,7 @@ const Hero = () => {
         textColor={"text-black"}
       />
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
