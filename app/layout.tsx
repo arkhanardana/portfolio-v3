@@ -16,17 +16,18 @@ export const metadata: Metadata = {
   title: "Arkhan Ardana Portfolio",
   description:
     "I'm a Fullstack Developer, based in Yogyakarta, Indonesia, passionate about building modern web applications with Next.js and Tailwind CSS.",
-  keywords: "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
+  keywords:
+    "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
   authors: {
     name: "Arkhan Ardana",
-    url: "https://arkhanardana.my.id",
+    url: "https://arkhanardana.net",
   },
   robots: "index, follow",
   openGraph: {
     title: "Arkhan Ardana Portfolio",
     description:
       "I'm a Fullstack Developer, based in Yogyakarta, Indonesia, passionate about building modern web applications with Next.js and Tailwind CSS.",
-    url: "https://arkhanardana.my.id",
+    url: "https://arkhanardana.net",
     siteName: "Arkhan Ardana Portfolio",
     images: [
       {
@@ -57,11 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="selection:bg-gray-900 selection:text-white">
       <link rel="icon" href="/favicon.ico" />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }
